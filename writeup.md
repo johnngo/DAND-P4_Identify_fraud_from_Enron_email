@@ -51,6 +51,53 @@ I found 2 outliers in my investigation
     * 'THE TRAVEL AGENCY IN THE PARK' - this is not an individual, but appears to be some sort of LLC entity used by the corporation for various (possibly illegal) business purposes. Since this is not an individual, I discarded it.
 
 *********************
+At least one new feature is implemented. Justification for that feature is provided in the written response. The effect of that feature on final algorithm performance is tested or its strength is compared to other features in feature selection. The student is not required to include their new feature in their final feature set.
+
+Just a small change is required here: given the scores obtained by SelectKBest and decision trees, how good or bad the new features are?
+To meet this criterion, we need a small paragraph comparing the scores obtained for the new features compared to those of the original ones, highlighting how good or bad the new features are.
+
+*******************************************
+
+With our analysis on the original feature we get
+
+Accuracy: 0.775862068966
+Precision:  0.142857142857
+Recall:  0.125
+Decision Tree algorithm run time:  0.005 s
+Feature Importance Ranking: 
+1 feature salary (0.337437907714)
+2 feature from_poi_to_this_person (0.236734693878)
+3 feature from_this_person_to_poi (0.109563164109)
+4 feature to_messages (0.101688311688)
+5 feature deferral_payments (0.0902902083254)
+6 feature total_payments (0.0753246753247)
+7 feature exercised_stock_options (0.048961038961)
+8 feature bonus (0.0)
+9 feature restricted_stock (0.0)
+10 feature shared_receipt_with_poi (0.0)
+
+vs.
+
+Feature importance Ranking: 
+1 feature salary (0.255056834004)
+2 feature bonus (0.232918904311)
+3 feature f_from_poi (0.140117302112)
+4 feature f_to_poi (0.135416666667)
+5 feature deferral_payments (0.0974911747407)
+6 feature total_payments (0.0967261904762)
+7 feature loan_advances (0.0322420634921)
+8 feature restricted_stock_deferred (0.0100308641975)
+9 feature deferred_income (0.0)
+10 feature total_stock_value (0.0)
+11 feature expenses (0.0)
+12 feature exercised_stock_options (0.0)
+13 feature long_term_incentive (0.0)
+14 feature shared_receipt_with_poi (0.0)
+
+Overall, with the new feature added, there has been a marginal difference
+with the ranking of feature f_from_poi (0.140117302112),feature f_to_poi (0.135416666667) compared to the orginal features. In some ways, the new feature declined in importance ranking relative to the original feature of from_poi_to_this_person (0.236734693878),
+from_this_person_to_poi (0.109563164109),
+to_messages (0.101688311688).
 
 What features did you end up using in your POI identifier,and what selection process did you use to pick them? Did you have to do any scaling? Why or why not? As part of the assignment, you should attempt to engineer your own feature that does not come ready-made in the dataset -- explain what feature you tried to make, and the rationale behind it. (You do not necessarily have to use it in the final analysis, only engineer and test it.) 
  

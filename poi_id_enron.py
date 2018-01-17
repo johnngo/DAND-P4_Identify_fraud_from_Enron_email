@@ -102,8 +102,9 @@ my_dataset = enronData
 
 ### features_list is a list of strings, each of which is a feature name
 ### first feature must be "poi", as this will be singled out as the label
-features_list = ["poi", "exercised_stock_options", "f_from_poi", "f_to_poi", "shared_receipt_with_poi"]
-
+# features_list = ["poi", "exercised_stock_options", "f_from_poi", "f_to_poi", "shared_receipt_with_poi"]
+# features_list = ["poi", "salary","bonus","f_from_poi", "f_to_poi", "deferral_payments","total_payments"]
+features_list = ["poi", "salary","bonus","f_from_poi", "f_to_poi"]
 
 ### store to my_dataset for easy export below
 my_dataset = enronData
@@ -127,19 +128,24 @@ labels, features = targetFeatureSplit(data)
 from sklearn import cross_validation
 features_train, features_test, labels_train, labels_test = cross_validation.train_test_split(features, labels, test_size=0.1, random_state=42)
 
-        
+###################################################       
         
 ### use KFold for split and validate algorithm
-from sklearn.cross_validation import KFold
-kf=KFold(len(labels),3)
-for train_indices, test_indices in kf:
-    #make training and testing sets
-    features_train= [features[ii] for ii in train_indices]
-    features_test= [features[ii] for ii in test_indices]
-    labels_train=[labels[ii] for ii in train_indices]
-    labels_test=[labels[ii] for ii in test_indices]        
+# from sklearn.cross_validation import KFold
+# kf=KFold(len(labels),3)
+# for train_indices, test_indices in kf:
+#     #make training and testing sets
+#     features_train= [features[ii] for ii in train_indices]
+#     features_test= [features[ii] for ii in test_indices]
+#     labels_train=[labels[ii] for ii in train_indices]
+#     labels_test=[labels[ii] for ii in test_indices]        
 
 
+from sklearn.cross_validation import train_test_split
+features_train, features_test, labels_train, labels_test = \
+train_test_split(features, labels, test_size=0.3, random_state=42)
+
+#######################################
 
 from sklearn.tree import DecisionTreeClassifier
 
