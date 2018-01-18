@@ -78,26 +78,23 @@ Feature Importance Ranking:
 
 vs.
 
-Feature importance Ranking: 
-1 feature salary (0.255056834004)
-2 feature bonus (0.232918904311)
-3 feature f_from_poi (0.140117302112)
-4 feature f_to_poi (0.135416666667)
-5 feature deferral_payments (0.0974911747407)
-6 feature total_payments (0.0967261904762)
-7 feature loan_advances (0.0322420634921)
-8 feature restricted_stock_deferred (0.0100308641975)
-9 feature deferred_income (0.0)
-10 feature total_stock_value (0.0)
-11 feature expenses (0.0)
-12 feature exercised_stock_options (0.0)
-13 feature long_term_incentive (0.0)
-14 feature shared_receipt_with_poi (0.0)
+Accuracy: 0.724137931034
+Precision:  0.25
+Recall:  0.5
+Decision Tree algorithm run time:  0.006 s
+Feature Importance Ranking: 
+1 feature f_from_poi (0.257363998231)
+2 feature f_to_poi (0.224906672275)
+3 feature salary (0.214517300881)
+4 feature from_poi_to_this_person (0.0941558441558)
+5 feature from_this_person_to_poi (0.0909276437848)
+6 feature to_messages (0.0484230055659)
+7 feature deferral_payments (0.0462219598583)
+8 feature total_payments (0.0234835752483)
+9 feature exercised_stock_options (0.0)
+10 feature bonus (0.0)
 
-Overall, with the new feature added, there has been a marginal difference
-with the ranking of feature f_from_poi (0.140117302112),feature f_to_poi (0.135416666667) compared to the orginal features. In some ways, the new feature declined in importance ranking relative to the original feature of from_poi_to_this_person (0.236734693878),
-from_this_person_to_poi (0.109563164109),
-to_messages (0.101688311688).
+After assessing the orignal feature and comparing it to the new feature,accuracy has declined from Accuracy: 0.827586206897 to Accuracy: 0.758620689655, Precision has improved from Precision: 0.25 to Precision: 0.3125 and Recall has improved as well from Recall: 0.125 to Recall: 0.625. We also see that our feature ranking has placed feature f_from_poi (0.257363998231) and feature f_to_poi (0.168413165782) at the top. As a result, I decided to use the new feature.
 
 What features did you end up using in your POI identifier,and what selection process did you use to pick them? Did you have to do any scaling? Why or why not? As part of the assignment, you should attempt to engineer your own feature that does not come ready-made in the dataset -- explain what feature you tried to make, and the rationale behind it. (You do not necessarily have to use it in the final analysis, only engineer and test it.) 
  
