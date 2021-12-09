@@ -1,4 +1,4 @@
-# DAND-p4-identify-fraud-from-enron-emai
+# DAND-p4-identify-fraud-from-enron-email
 
 ### Enron Fraud Detection
 
